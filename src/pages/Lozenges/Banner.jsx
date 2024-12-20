@@ -1,64 +1,56 @@
 import React from "react";
-import BgImage from "../../assets/images/Lozenges/bgImage.jpg";
+import ScrollAnimation from "react-animate-on-scroll";
+import { Images } from "../../assets/images";
 
 const Banner = () => {
   return (
-    <section style={styles.bannerSection}>
-      <img src={BgImage} alt="Lozenges Background" style={styles.bgImage} />
-      <div style={styles.overlay}>
-        <div style={styles.contentContainer}>
-          <h2 style={styles.title}>Lozenges Tablet</h2>
-          <p style={styles.description}>
-            Our Lozenges are scientifically crafted to provide effective relief
-            and care, addressing diverse health concerns with precision and
-            trust.
-          </p>
+    <section className="page_slider text-center">
+      <img src={Images.Baner123} alt="img" className="img-responsive" />
+      <div
+        className="container-fluid"
+        style={{ backgroundColor: "#07322D", opacity: "0.8" }}
+      >
+        <div className="row">
+          <div className="col-md-12  col-xs-12">
+            <div className="ds cover-image text-left">
+              <div className="container px-xl-120 .s-py-md-30">
+                <div className="row">
+                  <div className="col-md-12 col-xs-12">
+                    <div className="intro_layers_wrapper px-xl-50">
+                      <div className="intro_layers">
+                        <ScrollAnimation
+                          animateIn="fadeIn"
+                          initiallyVisible={true}
+                          duration={2}
+                        >
+                          <div className="intro_layer" style={{ width: "50%" }}>
+                            <h2
+                              className="text-capitalize intro_featured_word color-main-title"
+                              style={{ fontSize: "40px" }}
+                            >
+                              Lozenges
+                            </h2>
+                            <p
+                              className="intro_after_featured_word text-sm-left"
+                              style={{ color: "white" }}
+                            >
+                              Our Lozenges are scientifically crafted to provide
+                              effective relief and care, addressing diverse
+                              health concerns with precision and trust.
+                            </p>
+                          </div>
+                        </ScrollAnimation>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
-};
-
-const styles = {
-  bannerSection: {
-    position: "relative",
-    textAlign: "center",
-    overflow: "hidden",
-    width: "100%",
-    height: "300px",
-  },
-  bgImage: {
-    width: "100%",
-    height: "100%",
-    objectFit: "cover",
-    position: "absolute",
-    top: 0,
-    left: 0,
-    zIndex: -1,
-  },
-  overlay: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
-    padding: "20px",
-    boxSizing: "border-box",
-  },
-  contentContainer: {
-    textAlign: "left",
-    maxWidth: "600px",
-  },
-  title: {
-    fontSize: "40px",
-    color: "black",
-    marginBottom: "20px",
-    fontWeight: "bold",
-  },
-  description: {
-    fontSize: "16px",
-    color: "black",
-    lineHeight: "1.6",
-  },
 };
 
 export default Banner;

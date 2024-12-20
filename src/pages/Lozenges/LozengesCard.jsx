@@ -1,10 +1,10 @@
-import React from 'react';
-import Cherry from '../../assets/images/Lozenges/cherry.jpeg';
-import Ginger from '../../assets/images/Lozenges/ginger.jpeg';
-import Orange from '../../assets/images/Lozenges/orange.jpeg';
-import Honey from '../../assets/images/Lozenges/honey.jpeg';
-import Mint from '../../assets/images/Lozenges/mint.jpeg';
-import Lemon from '../../assets/images/Lozenges/lemon.jpeg';
+import React from "react";
+import Cherry from "../../assets/images/Lozenges/cherry.jpeg";
+import Ginger from "../../assets/images/Lozenges/ginger.jpeg";
+import Orange from "../../assets/images/Lozenges/orange.jpeg";
+import Honey from "../../assets/images/Lozenges/honey.jpeg";
+import Mint from "../../assets/images/Lozenges/mint.jpeg";
+import Lemon from "../../assets/images/Lozenges/lemon.jpeg";
 
 const LozengesCard = () => {
   const flavors = [
@@ -17,20 +17,31 @@ const LozengesCard = () => {
   ];
 
   return (
-    <div style={styles.cardContainer}>
-      {flavors.map((flavor, index) => (
-        <div key={index} style={styles.card}>
-          <h3 style={styles.title}>{flavor.title}</h3>
-          <div style={styles.imageBox}>
-            <img src={flavor.img} alt={flavor.title} style={styles.image} />
+    <div style={styles.mainContainer}>
+      <div style={{ width: "75%", textAlign: 'center'}}>
+      <h2 style={styles.mainTitle}>We offer lozenges in different flavours</h2>
+      <div style={styles.cardContainer}>
+        {flavors.map((flavor, index) => (
+          <div key={index} style={styles.card}>
+            <h3 style={styles.title}>{flavor.title}</h3>
+            <div style={styles.imageBox}>
+              <img src={flavor.img} alt={flavor.title} style={styles.image} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      </div>
     </div>
   );
 };
 
 const styles = {
+  mainContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "50px 0"
+  },
   cardContainer: {
     display: "flex",
     justifyContent: "space-around",
@@ -38,6 +49,7 @@ const styles = {
     flexWrap: "wrap",
     gap: "20px",
     padding: "10px",
+    marginTop: "24px"
   },
   card: {
     width: "150px",
@@ -58,13 +70,19 @@ const styles = {
     marginBottom: "10px",
   },
   imageBox: {
-    marginBottom: "10px",  
+    marginBottom: "10px",
   },
   image: {
     width: "100px",
     height: "100px",
     borderRadius: "50%",
-    objectFit: "cover", 
+    objectFit: "cover",
+  },
+  mainTitle: {
+    fontSize: '30px',
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: '10px',
   },
 };
 
